@@ -160,7 +160,7 @@ export const getEntities = async <S extends Schema>(
             dont_include_hashed_keys: false,
         });
 
-        console.log("entities", entities);
+        if (logging) console.log("entities", entities);
 
         if (logging) console.log(`Fetched ${entities} entities`);
 
@@ -442,9 +442,10 @@ export const setEntities = async <S extends Schema>(
                     );
                 }
             } else {
-                console.warn(
-                    `Component ${componentName} not found in provided components.`
-                );
+                if (logging)
+                    console.warn(
+                        `Component ${componentName} not found in provided components.`
+                    );
             }
         }
     }

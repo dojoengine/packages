@@ -212,11 +212,8 @@ describe("convertValues", () => {
             ids: ["invalid_bigint"],
         };
         expect(convertValues(schema, values)).toEqual(expected);
-
-        // TODO: fix console mocking
-        // expect(consoleSpy).toHaveBeenCalled();
-        // expect(consoleSpy).toHaveBeenCalledWith(
-        //   "Failed to convert invalid_bigint to BigInt. Using string value instead."
+        // expect(console.warn).toHaveBeenCalledWith(
+        //     "Failed to convert invalid_bigint to BigInt. Using string value instead."
         // );
     });
 
